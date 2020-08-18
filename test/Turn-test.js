@@ -24,4 +24,28 @@ describe('Turn', function(){
     expect(turn.card).to.deep.equal(card);
   });
 
+  it.skip('should return guess', function() {
+    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const turn = new Turn('pug', card);
+    expect(turn.returnGuess()).to.equal('pug');
+  });
+
+  it.skip('should return Card', function() {
+    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const turn = new Turn('pug', card);
+    expect(turn.returnCard()).to.equal('{ id: 1, question: "What is Robbie\'s favorite animal", answers: ["sea otter", "pug", "capybara"], correctAnswer: "sea otter"}');
+  });
+
+  it.skip('should evaluate guess', function() {
+    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const turn = new Turn('pug', card);
+    expect(turn.evaluateGuess()).to.equal(false);
+  });
+
+  it.skip('should giveFeedback', function() {
+    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const turn = new Turn('pug', card);
+    expect(turn.giveFeedback()).to.equal('incorrect!');
+  });
+
 })
