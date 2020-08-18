@@ -25,16 +25,16 @@ describe('Turn', function(){
     expect(turn.card).to.deep.equal(card);
   });
 
-  it.skip('should return guess', function() {
+  it('should return guess', function() {
     const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn = new Turn('pug', card);
     expect(turn.returnGuess()).to.equal('pug');
   });
 
-  it.skip('should return Card', function() {
+  it('should return Card', function() {
     const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn = new Turn('pug', card);
-    expect(turn.returnCard()).to.equal('{ id: 1, question: "What is Robbie\'s favorite animal", answers: ["sea otter", "pug", "capybara"], correctAnswer: "sea otter"}');
+    expect(turn.returnCard()).to.equal(card);
   });
 
   it.skip('should evaluate guess', function() {
