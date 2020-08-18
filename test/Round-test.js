@@ -7,11 +7,11 @@ const Card = require('../src/Card');
 const Turn = require('../src/Turn');
 
 describe('Round', function() {
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     expect(Round).to.be.a('function');
   });
 
-  it.skip('should be an instance of Round', function() {
+  it('should be an instance of Round', function() {
     const round = new Round();
     expect(round).to.be.an.instanceof(Round);
   });
