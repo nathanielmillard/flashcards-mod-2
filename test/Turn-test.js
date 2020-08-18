@@ -37,13 +37,13 @@ describe('Turn', function(){
     expect(turn.returnCard()).to.equal(card);
   });
 
-  it.skip('should evaluate guess', function() {
+  it('should evaluate guess', function() {
     const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn = new Turn('pug', card);
     expect(turn.evaluateGuess()).to.equal(false);
   });
 
-  it.skip('should giveFeedback', function() {
+  it('should giveFeedback', function() {
     const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn = new Turn('pug', card);
     expect(turn.giveFeedback()).to.equal('incorrect!');
