@@ -16,12 +16,12 @@ describe('Round', function() {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it.skip('should have a default number of turns', function() {
+  it('should have a default number of turns', function() {
     const round = new Round;
     expect(round.turns).to.equal(0);
   });
 
-  it.skip('should store a deck', function() {
+  it('should store a deck', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -39,7 +39,7 @@ describe('Round', function() {
       'playing with bubble wrap');
     const deck = new Deck([card1, card2, card3]);
     const round = new Round(deck);
-    expect(round.deck).to.deep.equal([card1, card2, card3]);
+    expect(round.deck).to.deep.equal(deck);
   });
 
   it.skip('should return current card', function(){

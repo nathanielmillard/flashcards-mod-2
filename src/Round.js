@@ -1,6 +1,7 @@
 class Round {
-  constructor() {
-
+  constructor(array) {
+    this.turns = 0
+    this.deck = array
   }
 }
 
