@@ -42,7 +42,7 @@ describe('Round', function() {
     expect(round.deck).to.deep.equal(deck);
   });
 
-  it.skip('should return current card', function(){
+  it('should return current card', function(){
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
