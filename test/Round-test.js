@@ -63,7 +63,7 @@ describe('Round', function() {
     expect(round.returnCurrentCard()).to.equal(card1);
   })
 
-  it.skip('should tell if turn is correct', function(){
+  it('should tell if turn is correct', function(){
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
