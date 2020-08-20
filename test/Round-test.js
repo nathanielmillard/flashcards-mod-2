@@ -84,7 +84,7 @@ describe('Round', function() {
     expect(round.takeTurn('sea otter')).to.equal('correct!');
   })
 
-  it.skip('should tell if turn is NOT correct', function(){
+  it('should tell if turn is NOT correct', function(){
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -106,7 +106,7 @@ describe('Round', function() {
     expect(round.takeTurn('spleen')).to.equal('incorrect!');
   })
 
-  it.skip('should keep track of turns', function(){
+  it('should keep track of turns', function(){
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -129,7 +129,7 @@ describe('Round', function() {
     expect(round.turns).to.equal(2);
   })
 
-  it.skip('should keep track of incorrect guesses', function(){
+  it('should keep track of incorrect guesses', function(){
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -149,7 +149,7 @@ describe('Round', function() {
     const round = new Round(deck);
     round.takeTurn('sea otter');
     round.takeTurn('spleen');
-    expect(round.incorrectGuesses).to.equal([14]);
+    expect(round.incorrectGuesses).to.deep.equal([14]);
   })
 
   it.skip('should keep track of current card', function(){

@@ -2,13 +2,19 @@ class Round {
   constructor(array) {
     this.turns = 0
     this.deck = array
+    this.incorrectGuesses = []
+    this.currentCard = ''
   }
   returnCurrentCard(){
-    return this.deck.cards[0]
+    return this.deck.cards[this.turns]
   }
   takeTurn(guess){
-    this.turns = this.turns++
-    let newTurn = new Turn(guess, this.deck.cards[0]);
+    this.currentCard = this.returnCurrentCard()
+    let newTurn = new Turn(guess, this.currentCard);
+    if (!newTurn.evaluateGuess()){
+      this.incorrectGuesses.push(newTurn.card.id)
+    };
+    this.turns++
     return newTurn.giveFeedback()
   }
 }
