@@ -1,7 +1,7 @@
 const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
-
+const Card = require('../src/Card');
 //I might want to use a for each loop to take each object in this array
 //and intantiate it as a new instance of a 'Card' each time and put those in an array
 //then take this new array and turn it into a Deck
@@ -22,8 +22,8 @@ class Game {
   }
 
   makeCards(){
-    newArray = prototypeQuestions.map(card => {
-      new Card(card.id, card.question, card.answers, card.correctAnswer)
+    let newArray = prototypeQuestions.map(card => {
+      return new Card(card.id, card.question, card.answers, card.correctAnswer)
     })
     this.cards = newArray
   }
