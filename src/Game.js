@@ -9,14 +9,23 @@ const util = require('./util');
 
 
 class Game {
-  constructor(cardsArray) {
-    this.cards = cardsArray
+  constructor() {
+    this.currentRound = ''
+    this.cards = []
   }
-  start(cards){
+  start(){
+    makeCards();
     deck = new Deck(cards);
     round = new Round(deck);
     this.printMessage();
     this.printQuestion();
+  }
+
+  makeCards(){
+    newArray = prototypeQuestions.map(card => {
+      new Card(card.id, card.question, card.answers, card.correctAnswer)
+    })
+    this.cards = newArray
   }
 
   printMessage(deck, round) {
