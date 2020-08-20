@@ -152,7 +152,7 @@ describe('Round', function() {
     expect(round.incorrectGuesses).to.deep.equal([14]);
   })
 
-  it.skip('should keep track of current card', function(){
+  it('should keep track of current card', function(){
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -175,7 +175,7 @@ describe('Round', function() {
     expect(round.returnCurrentCard()).to.deep.equal(card3);
   })
 
-  it.skip('should calculate percent correct', function(){
+  it('should calculate percent correct', function(){
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',

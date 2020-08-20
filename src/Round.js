@@ -17,6 +17,11 @@ class Round {
     this.turns++
     return newTurn.giveFeedback()
   }
+  calculatePercentCorrect(){
+    let numWrong = this.incorrectGuesses.length
+    let numRight = this.turns - numWrong
+    return (numRight / this.turns) * 100
+  }
 }
 
 const Turn = require('../src/Turn');
