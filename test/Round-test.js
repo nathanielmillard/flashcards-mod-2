@@ -197,7 +197,7 @@ describe('Round', function() {
     round.takeTurn('spleen');
     expect(round.calculatePercentCorrect()).to.equal(50);
   })
-  it('should calculate percent correct', function(){
+  it('should be able to end round', function(){
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
