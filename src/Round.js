@@ -6,30 +6,32 @@ class Round {
     this.currentCard = ''
     this.percentCorrect = 0
   }
-  returnCurrentCard(){
+  returnCurrentCard() {
     return this.deck.cards[this.turns]
   }
-  calculatePercentCorrect(){
-    if (this.turns > 0){
+  calculatePercentCorrect() {
+    if (this.turns > 0) {
       let numWrong = this.incorrectGuesses.length
       let numRight = this.turns - numWrong
       this.percentCorrect = (numRight / this.turns) * 100
       return this.percentCorrect;
-      }
+    }
     return this.percentCorrect;
   }
-  takeTurn(guess){
+  takeTurn(guess) {
     this.currentCard = this.returnCurrentCard()
     let newTurn = new Turn(guess, this.currentCard);
-    if (!newTurn.evaluateGuess()){
+    if (!newTurn.evaluateGuess()) {
       this.incorrectGuesses.push(newTurn.card.id)
-    };
+    }
     this.turns++
     this.calculatePercentCorrect()
     return newTurn.giveFeedback()
   }
-  endRound(){
-    return `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`
+  endRound() {
+    return `
+    ** Round over! **
+    You answered ${this.percentCorrect}% of the questions correctly!`
   }
 }
 

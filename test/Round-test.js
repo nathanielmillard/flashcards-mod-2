@@ -4,7 +4,6 @@ const expect = chai.expect;
 const Round = require('../src/Round');
 const Deck = require('../src/Deck');
 const Card = require('../src/Card');
-const Turn = require('../src/Turn');
 
 describe('Round', function() {
   it('should be a function', function() {
@@ -42,7 +41,7 @@ describe('Round', function() {
     expect(round.deck).to.deep.equal(deck);
   });
 
-  it('should return current card', function(){
+  it('should return current card', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -63,7 +62,7 @@ describe('Round', function() {
     expect(round.returnCurrentCard()).to.equal(card1);
   })
 
-  it('should tell if turn is correct', function(){
+  it('should tell if turn is correct', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -84,7 +83,7 @@ describe('Round', function() {
     expect(round.takeTurn('sea otter')).to.equal('correct!');
   })
 
-  it('should tell if turn is NOT correct', function(){
+  it('should tell if turn is NOT correct', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -106,7 +105,7 @@ describe('Round', function() {
     expect(round.takeTurn('spleen')).to.equal('incorrect!');
   })
 
-  it('should keep track of turns', function(){
+  it('should keep track of turns', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -129,7 +128,7 @@ describe('Round', function() {
     expect(round.turns).to.equal(2);
   })
 
-  it('should keep track of incorrect guesses', function(){
+  it('should keep track of incorrect guesses', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -152,7 +151,7 @@ describe('Round', function() {
     expect(round.incorrectGuesses).to.deep.equal([14]);
   })
 
-  it('should keep track of current card', function(){
+  it('should keep track of current card', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -175,7 +174,7 @@ describe('Round', function() {
     expect(round.returnCurrentCard()).to.deep.equal(card3);
   })
 
-  it('should calculate percent correct', function(){
+  it('should calculate percent correct', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
@@ -197,7 +196,7 @@ describe('Round', function() {
     round.takeTurn('spleen');
     expect(round.calculatePercentCorrect()).to.equal(50);
   })
-  it('should be able to end round', function(){
+  it('should be able to end round', function() {
     const card1 = new Card(
       1,
       'What is Robbie\'s favorite animal',
